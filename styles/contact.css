@@ -1,0 +1,228 @@
+/* Google fonts*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+/* Valores por defecto del navegador*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body */
+
+body {
+    background:#ffff;
+    background: #ffff;
+}
+
+/* Section */
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Contenedor Formulario de Contacto */
+
+section .contactForm {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    width: 90%;
+    height: 98%;
+    background: #1CB2D9;
+    box-shadow: 1px 9px 20px -5px rgba(0, 0, 0, 0.59);
+    border-radius: 30px;
+}
+
+section .contactForm .form {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 30px;
+}
+
+
+section .contactForm .form form {
+    width: 100%;
+}
+
+/* Titulo y descripcion */
+
+section .contactForm .form .texto h2 {
+    color: #1D4DE8;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+section .contactForm .form .texto p {
+    color: #3D6686;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Cajas de texto */
+
+section .contactForm .form form .inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+/* Etiquetas e inputs */
+
+.contactForm .form form .inputBox label {
+    color: #1D4DE8;
+    font-weight: 700;
+}
+
+section .contactForm .form form .inputBox input[type="text"],
+section .contactForm .form form .inputBox input[type="email"],
+section .contactForm .form form .inputBox input[type="number"],
+section .contactForm .form form .inputBox textarea{
+    border: none;
+    background: #cbebfb;
+    padding: 10px;
+    border-radius: 15px;
+    color: #1D4DE8;
+    resize: none;
+}
+
+section .contactForm .form form .inputBox input[type="text"]:focus,
+section .contactForm .form form .inputBox input[type="email"]:focus,
+section .contactForm .form form .inputBox textarea:focus {
+    outline: 2px solid #1D4DE8;
+}
+
+section .contactForm .form form input[type="submit"] {
+    background: #1D4DE8;
+    display: inline-block;
+    text-align: center;
+    width: 250px;
+    padding: 10px;
+    border-radius: 15px;
+    color: #fff;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 9px 20px -5px rgba(0, 0, 0, 0.59);
+    transition: 0.3s;
+}
+
+section .contactForm .form form input[type="submit"]:hover {
+    background: #3D6686;
+}
+
+/* Contenedor Informacion*/
+
+section .contactForm .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Imagen */
+
+section .contactForm .info .imgBox {
+    position: relative;
+    width: 350px;
+    height: 350px;
+}
+
+section .contactForm .info .imgBox img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Informacionde Contacto*/
+
+section .contactForm .info .textBox {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+section .contactForm .info .textBox .infoContact {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+section .contactForm .info .textBox .infoContact ion-icon{
+    font-size: 2em;
+    margin-right: 10px;
+    color: #3D6686;
+}
+
+section .contactForm .info .textBox .infoContact p{
+    color: #3D6686;
+}
+
+/*Redes Sociales*/
+
+section .contactForm .info .rrss a {
+    padding: 20px;
+    font-size: 2em;
+    color: #1D4DE8;
+    transition: 0.3s;
+}
+
+section .contactForm .info .rrss a:hover {
+    color: #3D6686;
+}
+
+
+
+
+/* -- Pantallas Largas -- */
+
+@media only screen and (max-width: 1200px) {
+    section .contactForm {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+/* -- Laptops y Tablets -- */
+
+@media only screen and (max-width: 768px) {
+    section .contactForm .info {
+        height: 300px;
+        padding: 20px;
+    }
+
+    section .contactForm .info .imgBox {
+        display: none;
+    }
+}
+
+/* -- Celulares -- */
+
+@media only screen and (max-width: 600px) {
+    section .contactForm .form {
+        margin-left: 0px;
+        width: 100%;
+    }
+    section .contactForm .info {
+        margin-bottom: 30px;
+}
+}

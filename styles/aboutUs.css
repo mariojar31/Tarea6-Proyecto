@@ -1,0 +1,160 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: beige;
+    
+}
+
+#left-container{
+    background-color: #1D4DE8;
+}
+
+.service-card{
+    width: 27%;
+    margin: 10px;
+}
+
+.header-service-card{
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.logo-prin img {
+    width: 150px;
+    height: auto;
+    margin-left: 20px;
+}
+
+.nav-center ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-center ul li {
+    display: inline;
+}
+
+.nav-center ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+
+.logos-right .icon{
+    width: 60px;
+    margin-right: 20px;
+}
+
+.logos-right {
+    padding-right: 65px;
+    /* Añade espacio desde el borde derecho */
+}
+
+.footer {
+    background-color: #DEB307;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.compromiso-text{
+    font-size: 24px;
+}
+
+.social-icon {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-elem a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10 px;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    transform: translateY(-10px);
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-elem a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.menu-icon:hover{
+    opacity: 1;
+}
+
+.text {
+    margin-top: 10px;
+    color: black;
+}
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        /* Coloca el contenido en una columna */
+        align-items: center;
+    }
+
+    .nav-center ul {
+        flex-direction: column;
+        /* Poner el menú en columna para móviles */
+        gap: 10px;
+        /* Espaciado más pequeño */
+    }
+
+    .logos-right {
+        display: flex;
+        justify-content: center;
+        padding-right: 0;
+    }
+
+    .logo-prin img {
+        width: 120px;
+        /* Logo más pequeño para pantallas más pequeñas */
+    }
+
+    .nav-center ul li a {
+        font-size: 20px;
+    }
+
+    .logos-right .icon {
+        width: 50px;
+        /* Iconos más pequeños */
+    }
+
+}

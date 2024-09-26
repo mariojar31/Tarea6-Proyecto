@@ -1,0 +1,59 @@
+
+.footer {
+    background-color: #DEB307;
+    padding: 20px;
+    text-align: center;
+    width: 100vwS;
+    margin-top: auto;
+}
+
+.compromiso-text{
+    font-size: 24px;
+}
+
+.social-icon {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icon-elem a {
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10 px;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    transform: translateY(-10px);
+}
+
+.menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.menu-elem a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.menu-icon:hover{
+    opacity: 1;
+}
+
+.text {
+    margin-top: 10px;
+    color: black;
+}
