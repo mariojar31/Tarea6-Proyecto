@@ -1,31 +1,42 @@
 const divPagos = document.getElementById('pagos');
 const divCafeteria = document.getElementById('cafeteria');
 const divPapeleria = document.getElementById('papeleria');
-const swiperContainer = document.querySelector('swiper-container');
+// const swiperContainer = document.querySelector('swiper-container');
+const swiperContainers = document.querySelectorAll('swiper-container');
+
+
+
+
+
+
 
 
 const ajustarSwiper = (width)=>{
   if(width<640){
-    swiperContainer.setAttribute('slides-per-view',1)
-    swiperContainer.setAttribute('space-between',10)
+    swiperContainers.forEach(swiperContainer=>{
+      swiperContainer.setAttribute('slides-per-view',1)
+      swiperContainer.setAttribute('space-between',10)
+    })
   }
   if(width>=640 && width<768){
-    swiperContainer.setAttribute('slides-per-view',2)
-    swiperContainer.setAttribute('space-between',20)
+    swiperContainers.forEach(swiperContainer=>{
+      swiperContainer.setAttribute('slides-per-view',2)
+      swiperContainer.setAttribute('space-between',20)
+    })
   }
   if(width>=768 && width<1000){
-    swiperContainer.setAttribute('slides-per-view',3)
-    swiperContainer.setAttribute('space-between',20)
+    swiperContainers.forEach(swiperContainer=>{
+      swiperContainer.setAttribute('slides-per-view',3)
+      swiperContainer.setAttribute('space-between',30)
+    })
   }
 
   if(width>1000){
-    swiperContainer.setAttribute('slides-per-view',4)
-    swiperContainer.setAttribute('space-between',50)
+    swiperContainers.forEach(swiperContainer=>{
+      swiperContainer.setAttribute('slides-per-view',4)
+      swiperContainer.setAttribute('space-between',40)
+    })
   }
-
-
-
-
 
 }
 
