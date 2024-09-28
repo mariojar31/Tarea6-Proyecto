@@ -22,6 +22,17 @@ body {
 .service-card{
     width: 27%;
     margin: 10px;
+    text-align: center;
+}
+
+.description-service{
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.2;
+}
+
+.img-service-card{
+    width: 50%;
 }
 
 .header-service-card{
@@ -158,3 +169,19 @@ body {
     }
 
 }
+
+/* PERFIL DE DESARROLLADORES */
+
+    
+.imagen-red-social{
+    width: 30px;
+}
+
+.title-card{
+    font-size: 1.5rem;
+}
+
+#container-card{
+    margin-bottom: 50px;
+}
+

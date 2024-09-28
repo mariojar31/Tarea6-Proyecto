@@ -1,0 +1,117 @@
+swiper-container {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 20px;
+  }
+
+swiper-slide {
+    text-align: center;
+    font-size: 16px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+/* Card */
+
+
+.item{
+    width: 200px;
+    text-align: center;
+    background-color: #efefef;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 10px #757676;
+    
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+}
+
+.item:hover{
+    background-color: #29499b;
+}
+
+.item img{
+    width: 100%;
+    height: 150px;
+}
+
+.item .title{
+    font-weight: 600;
+    width: 100%;
+    line-height: 1rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.item .price{
+    margin: 10px;
+}
+
+.item:hover .title,
+.item:hover .price{
+    color: #efefef
+}
+
+.item button{
+    background-color: #efefef;
+    color: #193f9f;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    padding: 5px;
+    border: 3px solid #193f9f;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    -moz-transition: all 0.25s ease;
+    -ms-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+}
+
+.item button:hover{
+    background-color: #deb307;
+    color: #efefef;
+}
+
+
+/* -- Pantallas Largas -- */
+
+@media only screen and (max-width: 1200px) {
+  
+}
+
+/* -- Laptops y Tablets -- */
+
+@media only screen and (max-width: 768px) {
+
+}
+
+/* -- Celulares -- */
+
+@media only screen and (max-width: 600px) {
+   
+}
