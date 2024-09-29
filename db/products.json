@@ -8,7 +8,7 @@
           "nombre": "Matrícula",
           "descripcion": "Pago correspondiente a la inscripción del estudiante para el año escolar.",
           "precio": 500000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./pagos/matricula.png",
           "disponible": true,
           "top": true
         },
@@ -17,7 +17,7 @@
           "nombre": "Certificados",
           "descripcion": "Pago para obtener el certificado de estudios de un estudiante.",
           "precio": 20000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./pagos/certi.png",
           "disponible": true,
           "top": true
         },
@@ -26,7 +26,7 @@
           "nombre": "Derecho de grado",
           "descripcion": "Pago necesario para poder presentar los exámenes de grado.",
           "precio": 150000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./pagos/grado.png",
           "disponible": true,
           "top": true
         },
@@ -35,7 +35,7 @@
           "nombre": "Otros pagos",
           "descripcion": "Otros pagos adicionales según la necesidad del estudiante.",
           "precio": 50000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./pagos/otrospagos.png",
           "disponible": true,
           "top": true
         }
@@ -49,7 +49,7 @@
           "nombre": "Sándwich",
           "descripcion": "Sándwich con queso y jamón ideal para el almuerzo escolar.",
           "precio": 5000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./cafeteria/sandwich.png",
           "disponible": true,
           "top": true
         },
@@ -58,7 +58,7 @@
           "nombre": "Jugo natural",
           "descripcion": "Jugo natural de frutas frescas.",
           "precio": 3000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./cafeteria/jugo-natural.png",
           "disponible": true,
           "top": true
         },
@@ -67,124 +67,133 @@
           "nombre": "Galletas de chocolate",
           "descripcion": "Galletas crujientes con chispas de chocolate.",
           "precio": 2500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./cafeteria/galleta-choco.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 8,
-          "nombre": "Empanada",
+          "nombre": "Empanada de carne",
           "descripcion": "Empanada de carne o pollo para la hora del almuerzo.",
           "precio": 4000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./cafeteria/empanadacarne.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 9,
-          "nombre": "Agua embotellada",
-          "descripcion": "Botella de agua mineral.",
-          "precio": 2000,
-          "fotografia": "./img/default.png",
+          "nombre": "Empanada de pollo",
+          "descripcion": "Empanada de carne o pollo para la hora del almuerzo.",
+          "precio": 4000,
+          "fotografia": "./cafeteria/empanadapollo.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 10,
-          "nombre": "Pastel de pollo",
-          "descripcion": "Pastel relleno de pollo desmechado.",
-          "precio": 3500,
-          "fotografia": "./img/default.png",
+          "nombre": "Agua embotellada",
+          "descripcion": "Botella de agua mineral.",
+          "precio": 2000,
+          "fotografia": "./cafeteria/agua.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 11,
-          "nombre": "Papas fritas",
-          "descripcion": "Porción de papas fritas crujientes.",
-          "precio": 3000,
-          "fotografia": "./img/default.png",
+          "nombre": "Pastel de pollo",
+          "descripcion": "Pastel relleno de pollo desmechado.",
+          "precio": 3500,
+          "fotografia": "./cafeteria/pastel-pollo.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 12,
-          "nombre": "Pizza porción",
-          "descripcion": "Porción individual de pizza con queso y jamón.",
-          "precio": 5000,
-          "fotografia": "./img/default.png",
+          "nombre": "Papas fritas",
+          "descripcion": "Porción de papas fritas crujientes.",
+          "precio": 3000,
+          "fotografia": "./cafeteria/papas-fritas.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 13,
-          "nombre": "Torta de chocolate",
-          "descripcion": "Deliciosa porción de torta de chocolate.",
-          "precio": 4500,
-          "fotografia": "./img/default.png",
+          "nombre": "Pizza porción",
+          "descripcion": "Porción individual de pizza con queso y jamón.",
+          "precio": 5000,
+          "fotografia": "./cafeteria/porcion-pizza.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 14,
-          "nombre": "Palito de queso",
-          "descripcion": "Palito horneado relleno de queso.",
-          "precio": 3000,
-          "fotografia": "./img/default.png",
+          "nombre": "Torta de chocolate",
+          "descripcion": "Deliciosa porción de torta de chocolate.",
+          "precio": 4500,
+          "fotografia": "./cafeteria/torta-choco.png",
           "disponible": true,
           "top": true
         },
         {
           "id": 15,
-          "nombre": "Chocolatina",
-          "descripcion": "Chocolatina pequeña de leche.",
-          "precio": 1500,
-          "fotografia": "./img/default.png",
+          "nombre": "Palito de queso",
+          "descripcion": "Palito horneado relleno de queso.",
+          "precio": 3000,
+          "fotografia": "./cafeteria/palito-queso.png",
           "disponible": true,
-          "top": false
+          "top": true
         },
         {
           "id": 16,
-          "nombre": "Arepa con queso",
-          "descripcion": "Arepa asada con queso derretido.",
-          "precio": 3500,
-          "fotografia": "./img/default.png",
+          "nombre": "Chocolatina",
+          "descripcion": "Chocolatina pequeña de leche.",
+          "precio": 1500,
+          "fotografia": "./cafeteria/chocolatina.png",
           "disponible": true,
           "top": false
         },
         {
           "id": 17,
-          "nombre": "Té frío",
-          "descripcion": "Bebida refrescante de té frío con limón.",
-          "precio": 2500,
-          "fotografia": "./img/default.png",
+          "nombre": "Arepa con queso",
+          "descripcion": "Arepa asada con queso derretido.",
+          "precio": 3500,
+          "fotografia": "./cafeteria/arepa-queso.png",
           "disponible": true,
           "top": false
         },
         {
           "id": 18,
-          "nombre": "Ensalada de frutas",
-          "descripcion": "Ensalada fresca de frutas con crema.",
-          "precio": 6000,
-          "fotografia": "./img/default.png",
+          "nombre": "Té frío",
+          "descripcion": "Bebida refrescante de té frío con limón.",
+          "precio": 2500,
+          "fotografia": "./cafeteria/té-frio.png",
           "disponible": true,
           "top": false
         },
         {
           "id": 19,
-          "nombre": "Paleta helada",
-          "descripcion": "Paleta helada de sabores frutales.",
-          "precio": 2000,
-          "fotografia": "./img/default.png",
+          "nombre": "Ensalada de frutas",
+          "descripcion": "Ensalada fresca de frutas con crema.",
+          "precio": 6000,
+          "fotografia": "./cafeteria/ensalada-frutas.png",
           "disponible": true,
           "top": false
         },
         {
           "id": 20,
+          "nombre": "Paleta helada",
+          "descripcion": "Paleta helada de sabores frutales.",
+          "precio": 2000,
+          "fotografia": "./cafeteria/paletas.png",
+          "disponible": true,
+          "top": false
+        },
+        {
+          "id": 21,
           "nombre": "Yogur con cereal",
           "descripcion": "Vaso de yogur con mezcla de cereales.",
           "precio": 4500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./cafeteria/yogurt.png",
           "disponible": true,
           "top": false
         }
@@ -198,7 +207,7 @@
           "nombre": "Cuaderno universitario",
           "descripcion": "Cuaderno con 100 hojas rayadas.",
           "precio": 4000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/cuaderno.png",
           "disponible": true,
           "top": true
         },
@@ -207,7 +216,7 @@
           "nombre": "Lápiz",
           "descripcion": "Lápiz de grafito para escribir y dibujar.",
           "precio": 1000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/lapiz.png",
           "disponible": true,
           "top": true
         },
@@ -216,7 +225,7 @@
           "nombre": "Borrador",
           "descripcion": "Borrador suave para lápiz.",
           "precio": 500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/borra.png",
           "disponible": true,
           "top": true
         },
@@ -225,7 +234,7 @@
           "nombre": "Tijeras",
           "descripcion": "Tijeras escolares con punta redonda.",
           "precio": 2500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/tijeras.png",
           "disponible": true,
           "top": true
         },
@@ -234,7 +243,7 @@
           "nombre": "Pegante en barra",
           "descripcion": "Pegante en barra fácil de usar.",
           "precio": 2000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/pegante.png",
           "disponible": true,
           "top": true
         },
@@ -243,7 +252,7 @@
           "nombre": "Colores",
           "descripcion": "Caja de 12 colores.",
           "precio": 5000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/colores.png",
           "disponible": true,
           "top": true
         },
@@ -252,7 +261,7 @@
           "nombre": "Sacapuntas",
           "descripcion": "Sacapuntas con depósito para residuos.",
           "precio": 1000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/taja.png",
           "disponible": true,
           "top": true
         },
@@ -261,7 +270,7 @@
           "nombre": "Regla",
           "descripcion": "Regla de 30 cm de plástico.",
           "precio": 1500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/reglas.png",
           "disponible": true,
           "top": true
         },
@@ -270,7 +279,7 @@
           "nombre": "Calculadora científica",
           "descripcion": "Calculadora con funciones científicas básicas.",
           "precio": 15000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/calc.png",
           "disponible": true,
           "top": true
         },
@@ -279,7 +288,7 @@
           "nombre": "Agenda escolar",
           "descripcion": "Agenda con el calendario escolar y espacios para anotaciones diarias.",
           "precio": 10000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/agenda.png",
           "disponible": true,
           "top": true
         },
@@ -288,7 +297,7 @@
           "nombre": "Marcadores permanentes",
           "descripcion": "Set de marcadores permanentes de varios colores.",
           "precio": 8000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/marcador.png",
           "disponible": true,
           "top": true
         },
@@ -297,7 +306,7 @@
           "nombre": "Corrector líquido",
           "descripcion": "Corrector líquido con aplicador de esponja.",
           "precio": 2500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/corrector.png",
           "disponible": true,
           "top": false
         },
@@ -306,7 +315,7 @@
           "nombre": "Carpeta de anillas",
           "descripcion": "Carpeta con 4 anillas para hojas A4.",
           "precio": 12000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/folder.png",
           "disponible": true,
           "top": false
         },
@@ -315,7 +324,7 @@
           "nombre": "Separadores de carpetas",
           "descripcion": "Paquete de separadores de colores para carpetas.",
           "precio": 3000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/separador.png",
           "disponible": true,
           "top": false
         },
@@ -324,7 +333,7 @@
           "nombre": "Cinta adhesiva",
           "descripcion": "Rollo de cinta adhesiva transparente.",
           "precio": 2000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/cinta.png",
           "disponible": true,
           "top": false
         },
@@ -333,7 +342,7 @@
           "nombre": "Block de notas adhesivas",
           "descripcion": "Paquete de notas adhesivas de varios colores.",
           "precio": 3000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/pop.png",
           "disponible": true,
           "top": false
         },
@@ -342,7 +351,7 @@
           "nombre": "Bolígrafo de gel",
           "descripcion": "Bolígrafo de gel de color azul con punta fina.",
           "precio": 1500,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/esfero.png",
           "disponible": true,
           "top": false
         },
@@ -351,7 +360,7 @@
           "nombre": "Papel bond",
           "descripcion": "Resma de papel bond tamaño carta.",
           "precio": 20000,
-          "fotografia": "./img/default.png",
+          "fotografia": "./papeleria/resma.png",
           "disponible": true,
           "top": false
         }
