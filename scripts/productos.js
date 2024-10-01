@@ -5,12 +5,6 @@ const divPapeleria = document.getElementById('papeleria');
 const swiperContainers = document.querySelectorAll('swiper-container');
 
 
-
-
-
-
-
-
 const ajustarSwiper = (width)=>{
   if(width<640){
     swiperContainers.forEach(swiperContainer=>{
@@ -56,45 +50,49 @@ const fetchProducts = async()=>{
     data.productos.map(cat=>{
       if(cat.categoria=='Pagos'){
         cat.items.map(item=>{
-          const productoP = document.createElement('swiper-slide');
+          if(item.top){
+            const productoP = document.createElement('swiper-slide');
   
-          productoP.innerHTML=`<div class="item">
-                                <img src="${item.fotografia}">
-                                <div class="title">${item.nombre}</div>
-                                <div class="price">Precio: $${item.precio.toLocaleString('de-DE')}</div>
-                                <button onclick="addToCard(0)">Add To Card</button>
-                              </item>`
-  
-          divPagos.append(productoP)
+            productoP.innerHTML=`<div class="item">
+                                  <img src="${item.fotografia}">
+                                  <div class="title">${item.nombre}</div>
+                                  <div class="price">Precio: $${item.precio.toLocaleString('de-DE')}</div>
+                                  <button onclick="addToCard(0)">Add To Card</button>
+                                </item>`
+    
+            divPagos.append(productoP)
+          }
   
       })
       }else if(cat.categoria=='Cafeteria'){
         cat.items.map(item=>{
-          const productoP = document.createElement('swiper-slide');
-  
-          productoP.innerHTML=`<div class="item">
-                                <img src="${item.fotografia}">
-                                <div class="title">${item.nombre}</div>
-                                <div class="price">Precio: $${item.precio}</div>
-                                <button onclick="addToCard(0)">Add To Card</button>
-                              </item>`
-  
-          divCafeteria.append(productoP)
-  
+          if(item.top){  
+            const productoP = document.createElement('swiper-slide');
+    
+            productoP.innerHTML=`<div class="item">
+                                  <img src="${item.fotografia}">
+                                  <div class="title">${item.nombre}</div>
+                                  <div class="price">Precio: $${item.precio}</div>
+                                  <button onclick="addToCard(0)">Add To Card</button>
+                                </item>`
+    
+            divCafeteria.append(productoP)
+          }
       })
       }else if(cat.categoria=='Papeleria'){
         cat.items.map(item=>{
-          const productoP = document.createElement('swiper-slide');
-  
-          productoP.innerHTML=`<div class="item">
-                                <img src="${item.fotografia}">
-                                <div class="title">${item.nombre}</div>
-                                <div class="price">Precio: $${item.precio}</div>
-                                <button onclick="addToCard(0)">Add To Card</button>
-                              </item>`
-  
-          divPapeleria.append(productoP)
-  
+          if(item.top){
+            const productoP = document.createElement('swiper-slide');
+    
+            productoP.innerHTML=`<div class="item">
+                                  <img src="${item.fotografia}">
+                                  <div class="title">${item.nombre}</div>
+                                  <div class="price">Precio: $${item.precio}</div>
+                                  <button onclick="addToCard(0)">Add To Card</button>
+                                </item>`
+    
+            divPapeleria.append(productoP)
+      }
       })
       }
     })
