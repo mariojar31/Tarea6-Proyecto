@@ -4,13 +4,13 @@ const url = new URL(location.href);
 const categ = url.searchParams.get('cat');
 const cap = categ.charAt(0).toUpperCase()+categ.slice(1);
 head.innerText= cap 
-
+console.log(categ)
 const fetchProductsCat = async(category)=>{
     const response = await fetch('./db/products.json');
     const data = await response.json();
 
     data.productos.map(cat=>{
-      if(cat.categoria.toLowerCase()==category){
+      if(cat.categoria==category){
         console.log(cat)
         cat.items.map(item=>{
           
