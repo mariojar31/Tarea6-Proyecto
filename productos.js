@@ -5,18 +5,12 @@ const divPapeleria = document.getElementById('papeleria');
 const swiperContainers = document.querySelectorAll('swiper-container');
 
 
-
-
-
-
-
-
 const ajustarSwiper = (width)=>{
   if(width<640){
     swiperContainers.forEach(swiperContainer=>{
-      swiperContainer.setAttribute('slides-per-view',1)
+      swiperContainer.setAttribute('slides-per-view',1) 
       swiperContainer.setAttribute('space-between',10)
-    })
+    }) 
   }
   if(width>=640 && width<768){
     swiperContainers.forEach(swiperContainer=>{
@@ -49,58 +43,64 @@ addEventListener('resize',()=>{
   
 })
 
-const fetchProducts = async()=>{
-    const response = await fetch('./db/products.json');
-    const data = await response.json();
+let mostrar=JSON.parse(localStorage.getItem('productos'))
+//console.log(mostrar)
 
-    data.productos.map(cat=>{
-      if(cat.categoria=='Pagos'){
-        cat.items.map(item=>{
+mostrar.map(elemte=>{
+    if(elemte.categoria=='Pagos'){
+        let elementos= elemte.items;
+        elementos.map(ele=>{
+          //console.log(ele.fotografia)
           const productoP = document.createElement('swiper-slide');
   
           productoP.innerHTML=`<div class="item">
-                                <img src="${item.fotografia}">
-                                <div class="title">${item.nombre}</div>
-                                <div class="price">Precio: $${item.precio.toLocaleString('de-DE')}</div>
+                                <img src="${ele.fotografia}">
+                                <div class="title">${ele.nombre}</div>
+                                <div class="price">Precio: $${ele.precio}</div>
                                 <button onclick="addToCard(0)">Add To Card</button>
+                                
                               </item>`
   
           divPagos.append(productoP)
-  
-      })
-      }else if(cat.categoria=='Cafeteria'){
-        cat.items.map(item=>{
+
+        })
+      
+    } else if(elemte.categoria=='Cafeteria'){
+        let elementosC= elemte.items;
+        elementosC.map(ele=>{
+          //console.log(ele.fotografia)
           const productoP = document.createElement('swiper-slide');
   
           productoP.innerHTML=`<div class="item">
-                                <img src="${item.fotografia}">
-                                <div class="title">${item.nombre}</div>
-                                <div class="price">Precio: $${item.precio}</div>
+                                <img src="${ele.fotografia}">
+                                <div class="title">${ele.nombre}</div>
+                                <div class="price">Precio: $${ele.precio}</div>
                                 <button onclick="addToCard(0)">Add To Card</button>
                               </item>`
   
-          divCafeteria.append(productoP)
-  
-      })
-      }else if(cat.categoria=='Papeleria'){
-        cat.items.map(item=>{
-          const productoP = document.createElement('swiper-slide');
-  
-          productoP.innerHTML=`<div class="item">
-                                <img src="${item.fotografia}">
-                                <div class="title">${item.nombre}</div>
-                                <div class="price">Precio: $${item.precio}</div>
-                                <button onclick="addToCard(0)">Add To Card</button>
-                              </item>`
-  
-          divPapeleria.append(productoP)
-  
-      })
-      }
-    })
-    
+        divCafeteria.append(productoP)
 
-  
-}
+        })
 
-fetchProducts();
+    }
+
+    else if(elemte.categoria=='Papeleria'){
+      let elementosP= elemte.items;
+      elementosP.map(ele=>{
+        //console.log(ele.fotografia)
+        const productoP = document.createElement('swiper-slide');
+
+        productoP.innerHTML=`<div class="item">
+                              <img src="${ele.fotografia}">
+                              <div class="title">${ele.nombre}</div>
+                              <div class="price">Precio: $${ele.precio}</div>
+                              <button onclick="addToCard(0)">Add To Card</button>
+                            </item>`
+
+      divPapeleria.append(productoP)
+
+      })
+
+  }
+  
+})

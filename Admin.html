@@ -18,9 +18,23 @@
     </script>    
 
   <div id="main" class="mt-5 pt-5">
-    <a href="#featuredProducts">
-      <img src="./img/banner.png" alt="Banner Informativo" width="100%" height="auto" >
-    </a>
+    <H1>Agregar productos</H1>
+    <form id="formularioAgregar">
+        <input id="nombre" type="text" placeholder="nombre">
+        <input id="descripcion"type ="text" placeholder="descripcion">
+        <input id="precio"type="number" placeholder="precio">
+        <input type="file" class="form-control" id="imagen" accept="image/*" required>
+        <input id="categoria"type="text" placeholder="categoria">
+        <input name="enviar" type="submit" value="agregar">
+       
+    </form>
+
+    <H1>Eliminar</H1>
+    <form id="formularioEliminar">
+        <input id="categeliminar" type="text" placeholder="categoria">
+        <input id="id" type="number" placeholder="ID">
+        <input name="eliminar" type="submit" value="Eliminar">
+    </form>
 
       <!-- Productos Destacados -->
       <div style="padding-top: 70px;" id="featuredProducts" class="productorDestacados">
@@ -63,6 +77,8 @@
 
 <div id="footer">
 </div>
+<script src="productos.js"></script>
+<script src="formulario.js"></script>
 <script src="./scripts/footer.js">
 </script>
 <script src="./productos.js"></script>
@@ -72,8 +88,8 @@
 
 
 <!-- Custom Script -->
-<script defer src="./scripts/script.js"></script>
 
+<script defer src="./scripts/script.js"></script>
 <script type="module" src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script>
 <script nomodule src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
 <!-- BootStrap -->
