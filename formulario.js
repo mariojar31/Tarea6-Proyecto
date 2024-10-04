@@ -17,7 +17,7 @@ formularioagrgar.addEventListener('submit',(event)=>{
     let valor_categoria= categoria.value
     
     agregar_productos(valor_categoria,valor_nombre,valor_descripcion,valor_precio)
-    location.reload();
+   location.reload();
 
 })
 
@@ -63,11 +63,11 @@ function agregar_productos(categoria, Nombre,Descripcion,Precio){
 
                if(eleme.categoria==categoria){
 
-                    let total_ID = eleme.items.length
-                    let total= total_ID+1;
+                    let encontrarIDD= encontrarID(eleme.items)+1;
+                    
 
                     let guardar= {
-                            id:total,
+                            id:encontrarIDD,
                             nombre:Nombre,
                             descripcion: Descripcion,
                             precio: Precio,
@@ -113,3 +113,16 @@ function eliminar_productos(categoria , ID){
     
 }
 
+function encontrarID(items){
+
+    let listaID=[];
+
+    items.map(element=>{
+        listaID.push(element.id);
+        
+        
+
+    })
+
+return Math.max(...listaID)
+}
