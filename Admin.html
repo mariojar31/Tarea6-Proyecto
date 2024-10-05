@@ -1,98 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduMarket</title>
-    <link rel="shortcut icon" href="./img/Diseño_sin_título__7_-removebg-preview.png">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./styles/swipperProducts.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/admin.css">
+    <title>Add</title>
 </head>
-<body> 
-    <div id="header">
 
-    </div>
-    <script src="./scripts/header.js">
-    </script>    
+<body>
+    <header id="header">
 
-  <div id="main" class="mt-5 pt-5">
-    <H1>Agregar productos</H1>
-    <form id="formularioAgregar">
-        <input id="nombre" type="text" placeholder="nombre">
-        <input id="descripcion"type ="text" placeholder="descripcion">
-        <input id="precio"type="number" placeholder="precio">
-        <input type="file" class="form-control" id="imagen" accept="image/*" required>
-        <input id="categoria"type="text" placeholder="categoria">
-        <input name="enviar" type="submit" value="agregar">
-       
-    </form>
-
-    <H1>Eliminar</H1>
-    <form id="formularioEliminar">
-        <input id="categeliminar" type="text" placeholder="categoria">
-        <input id="id" type="number" placeholder="ID">
-        <input name="eliminar" type="submit" value="Eliminar">
-    </form>
-
-      <!-- Productos Destacados -->
-      <div style="padding-top: 70px;" id="featuredProducts" class="productorDestacados">
-        <h2 class="text-center">Productos Destacados</h2>
-        <hr style="border-width: 2px; border-color: #193f9f; margin: 0 5vw;">
+    </header>
+    <script src="./scripts/headerAdmin.js"></script>
+    <main class="my-5 pt-5">
         <div class="container">
-            <div class="paySection">
-                <h3>Pagos</h3>
-                <hr>
-                <swiper-container id="pagos" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
-                slides-per-view="3">
-                 
-                </swiper-container>
+            <h3 class="text-center p-2">Panel de Administrador</h3>
+            <hr>
+            <h4>Inventario</h4>
+            <br>
+            <div class="mb-3">
+                <select
+                    class="form-select form-select-responsive"
+                    name=""
+                    id=""
+                    style="width: 200px;"
+                >
+                    <option selected>Selecciona Categoría</option>
+                    <option value="Pagos">Pagos</option>
+                    <option value="Cafeteria">Cafetería</option>
+                    <option value="Papeleria">Papelería</option>
+                </select>
             </div>
-            <div class="coffeeSection">
-                <h3>Cafeteria</h3>
-                <hr>
-
-                <swiper-container id="cafeteria" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
-                slides-per-view="3">
-                 
-                </swiper-container>
-
+            
+            <div
+                class="table-responsive"
+            >
+                <table
+                    class="table table-primary"
+                >
+                    <thead>
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">existencias</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td scope="row"><input type="number" value=0 disabled style="width: 50px;"></td>
+                            <td><input type="text" value="Nombre" disabled></td>
+                            <td><input type="number" value=0 disabled></td>
+                            <td><div class="d-flex flex-row"><span class="btn btn-danger mx-1">Borrar</span><span class="btn btn-primary mx-1">Modificar</span><span class="btn btn-success mx-1 disabled">Confirmar</span></div></td>
+                        </tr>     
+                    </tbody>
+                </table>              
             </div>
-            <div class="stationarySection">
-                <h3>Papeleria</h3>
-                <hr>
-                <swiper-container id="papeleria" class="mySwiper" pagination="true" pagination-clickable="true" space-between="30"
-                slides-per-view="3">
-                 
-                </swiper-container>
 
-            </div>
-
+            <button
+                type="button"
+                class="btn btn-primary btn-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#modalId"
+            >
+                Agregar Nuevo Articulo
+            </button>
+            
+            
         </div>
-      </div>
 
-<br><br>
-</div>
+        
+        <!-- Modal Body -->
+        <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+        <div
+            class="modal fade"
+            id="modalId"
+            tabindex="-1"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            
+            role="dialog"
+            aria-labelledby="modalTitleId"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                role="document"
+            >
+                <div class="modal-content" style="width: 100vw; height: auto; background-color: transparent;">
+                    <div id="addItem" class="modal-body">
+                        <section>
+                            <div class="adminForm">
+                                <div class="form">
+                                    <div class="text">
+                                        <h2>¡Agrega tus productos!</h2>
+                                        <p>Ingresa la información de los productos aquí de manera fácil y ágil.</p>
+                                    </div>
+                                    <form action="" id="formulario" method="post">
+                                        <div class="inputBox">
+                                            <label for="Categoria">Categoría :</label>
+                                            <select name="Categoria" id="Categoria">
+                                                <option value="Seleccionar">Seleccionar</option>
+                                                <option value="Papeleria">Papelería</option>
+                                                <option value="Cafeteria">Cafetería</option>
+                                                <option value="Institucional">Institucional</option>
+                                                <option value="Pagos">Pagos</option>
+                                            </select>
+                                        </div>
+                    
+                                        <div class="inputBox">
+                                            <label for="nombre">Nombre del producto :</label>
+                                            <input type="text" id="nombre" name="name" autocomplete="off" placeholder="Nombre" required>
+                                        </div>
+                    
+                                        <div class="inputBox">
+                                            <label for="Precio">Precio del producto :</label>
+                                            <input type="number" id="Precio" name="Precio" placeholder="Precio" required>
+                                        </div>
+                    
+                                        <div class="inputBox">
+                                            <label for="Cantidad">Cantidad del producto :</label>
+                                            <input type="number" id="Cantidad" name="Cantidad" placeholder="Cantidad" required>
+                                        </div>
+                    
+                                        <div class="inputBox">
+                                            <label for="Foto">Foto del producto :</label>
+                                            <input type="file" id="foto" name="Foto" accept="image/*" required>
+                                        </div>
+                    
+                                        <div class="inputBox">
+                                            <label for="Descripcion">Descripción del producto :</label>
+                                            <textarea name="Descripcion" id="Descripcion" cols="30" rows="5"
+                                                placeholder="Descripción"></textarea>
+                                        </div>
+                    
+                                        <div class="d-flex">
+                                            <button type="submit" class="btn btn-primary m-1">Agregar Producto</button>
+                                            <button type="button" class="btn btn-danger m-1" data-bs-dismiss="modal">Cancelar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="imagen">
+                                    <img src="./img/Diseño_sin_título__7_-removebg-preview.png" alt="">  
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                
+               
+                <!-- <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitleId">
+                            Modal title
+                        </h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">Body</div>
+                    <div class="modal-footer">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-bs-dismiss="modal"
+                        >
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+        <!-- Optional: Place to the bottom of scripts -->
+        <script>
+            const myModal = new bootstrap.Modal(
+                document.getElementById("modalId"),
+                options,
+            );
+        </script>
+        
+    </main>
+    <footer id="footer">
 
-<div id="footer">
-</div>
-<script src="productos.js"></script>
-<script src="formulario.js"></script>
-<script src="./scripts/footer.js">
-</script>
-<script src="./scripts/productos.js"></script>
-
-<!-- Swipper -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-
-
-<!-- Custom Script -->
-
-<script defer src="./scripts/script.js"></script>
-<script type="module" src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script>
-<script nomodule src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
-<!-- BootStrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </footer> 
+    <script src="./scripts/footer.js"></script>
+    <script src="./scripts/formulario.js"></script>
+    <!-- BootStrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+
 </html>
