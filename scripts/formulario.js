@@ -1,12 +1,20 @@
-const formularioagrgar = document.getElementById('formularioAgregar');
-const categoria= document.getElementById('categoria')
+const formularioagrgar = document.getElementById('formulario');
+const categoria= document.getElementById('Categoria')
 const nombre= document.getElementById('nombre')
-const descripcion = document.getElementById('descripcion')
-const precio= document.getElementById('precio')
+const descripcion = document.getElementById('Descripcion')
+const precio= document.getElementById('Precio')
 const formulaelimianr = document.getElementById('formularioEliminar');
 const id= document.getElementById('id')
-const cateelimi= document.getElementById('categeliminar')
+const borrarBtn= document.getElementById('')
+const productList = document.getElementById('productList')
+const select = document.getElementById('selectCategory')
 
+let filter = 'none'
+select.addEventListener('change',()=>{
+    const selectedValue = select.value
+    filter=selectedValue
+    Obtener_datos()
+})
 
 formularioagrgar.addEventListener('submit',(event)=>{
             
@@ -21,19 +29,11 @@ formularioagrgar.addEventListener('submit',(event)=>{
 
 })
 
-formulaelimianr.addEventListener('submit',(event)=>{
-    event.preventDefault;
-    let valor_ID= id.value
-    let valor_categoria= cateelimi.value
-    eliminar_productos(valor_categoria , valor_ID);
-    location.reload();
-
-})
 
 const URL= './db/products.json';
 
 async function Obtener_datos(){
-    
+    productList.innerHTML=''
     const extrae = await fetch(URL);
     const datos= await extrae.json();
     const productos= datos.productos;
@@ -41,14 +41,59 @@ async function Obtener_datos(){
     //console.log(datos_local);
     if(datos_local==null){
         localStorage.setItem('productos',JSON.stringify( productos));
+        datos_local= JSON.parse(localStorage.getItem('productos'))
     }
+    datos_local.map(cat=>{
+        
+        if(filter!=="none"){
+            if(cat.categoria==filter){
+                cat.items.map(producto=>{
+                
+                    const row = document.createElement('tr')
+                    row.innerHTML=`
+                                    <td scope="row"><input type="number" value=${producto.id} disabled style="width: 50px;"></td>
+                                    <td><input type="text" value="${producto.nombre}" disabled></td>
+                                    <td><input type="number" value=0 disabled></td>
+                                    <td><div class="d-flex flex-row"><span class="btn btn-danger mx-1" onClick="eliminar_productos('${cat.categoria}',${producto.id})">Borrar</span><span class="btn btn-primary mx-1">Modificar</span><span class="btn btn-success mx-1 disabled">Confirmar</span></div></td>
+                                `
+                    productList.appendChild(row)
+                })
+            }
+
+        }else{
+            cat.items.map(producto=>{
+                
+                const row = document.createElement('tr')
+                row.innerHTML=`
+                                <td scope="row"><input type="number" value=${producto.id} disabled style="width: 50px;"></td>
+                                <td><input id="name${producto.id}" type="text" value="${producto.nombre}" disabled></td>
+                                <td><input id="cant${producto.id}" type="number" value=${producto.disponible} disabled></td>
+                                <td><div class="d-flex flex-row"><span class="btn btn-danger mx-1" onClick="eliminar_productos('${cat.categoria}',${producto.id})"><img src="./img/delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"></span><span class="btn btn-primary mx-1" onclick="actMod(${producto.id})"><img src="../img/box_edit_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"></span><span id="btnCheck${producto.id}"  onclick="saveChanges(${producto.id})" class="btn btn-success mx-1 disabled"><img src="./img/check_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"></span></div></td>
+                            `
+                productList.appendChild(row)
+            })
+        }
+    })
+    
+    
    
 }
 Obtener_datos();
 
-function agregar_productos(categoria, Nombre,Descripcion,Precio){
+const actMod = (id)=>{
+    document.getElementById(`name${id}`).disabled=false
+    document.getElementById(`cant${id}`).disabled=false
+    document.getElementById(`btnCheck${id}`).classList.remove('disabled')
+}
 
-    const archivoImagen = document.getElementById('imagen').files[0];
+const saveChanges = (id)=>{
+    document.getElementById(`btnCheck${id}`).classList.add('disabled')
+}
+
+function agregar_productos(categoria, Nombre,Descripcion,Precio){
+    
+    const archivoImagen = document.getElementById('foto').files[0];
+    console.log(archivoImagen)
     if(!archivoImagen){
         alert("Por favor ingrese la imagen "); return;
     }
@@ -110,7 +155,7 @@ function eliminar_productos(categoria , ID){
         }
 
    }
-    
+   location.reload()
 }
 
 function encontrarID(items){
@@ -125,4 +170,14 @@ function encontrarID(items){
     })
 
 return Math.max(...listaID)
+}
+
+const mostrarProductos = async()=>{
+
+    let datos_local= await JSON.parse(localStorage.getItem('productos'))
+    
+
+
+
+
 }

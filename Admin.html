@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/Diseño_sin_título__7_-removebg-preview.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/admin.css">
-    <title>Add</title>
+    <title>Panel Administrador</title>
 </head>
 
 <body>
@@ -20,25 +21,34 @@
             <hr>
             <h4>Inventario</h4>
             <br>
+            
             <div class="mb-3">
                 <select
                     class="form-select form-select-responsive"
                     name=""
-                    id=""
+                    id="selectCategory"
                     style="width: 200px;"
                 >
-                    <option selected>Selecciona Categoría</option>
+                    <option value="none" selected>Selecciona Categoría</option>
                     <option value="Pagos">Pagos</option>
                     <option value="Cafeteria">Cafetería</option>
                     <option value="Papeleria">Papelería</option>
                 </select>
             </div>
+            <button
+                type="button"
+                class="btn btn-primary btn-md"
+                data-bs-toggle="modal"
+                data-bs-target="#modalId"
+            >
+                Agregar Nuevo Articulo
+            </button>
             
             <div
-                class="table-responsive"
+                class="table-responsive" style="height: 100vw;"
             >
                 <table
-                    class="table table-primary"
+                    class="table table-responsive"
                 >
                     <thead>
                         <tr>
@@ -48,26 +58,12 @@
                             <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr class="">
-                            <td scope="row"><input type="number" value=0 disabled style="width: 50px;"></td>
-                            <td><input type="text" value="Nombre" disabled></td>
-                            <td><input type="number" value=0 disabled></td>
-                            <td><div class="d-flex flex-row"><span class="btn btn-danger mx-1">Borrar</span><span class="btn btn-primary mx-1">Modificar</span><span class="btn btn-success mx-1 disabled">Confirmar</span></div></td>
-                        </tr>     
+                    <tbody id="productList">
+                          
                     </tbody>
                 </table>              
             </div>
-
-            <button
-                type="button"
-                class="btn btn-primary btn-lg"
-                data-bs-toggle="modal"
-                data-bs-target="#modalId"
-            >
-                Agregar Nuevo Articulo
-            </button>
-            
+            <br>            
             
         </div>
 
@@ -105,7 +101,7 @@
                                                 <option value="Seleccionar">Seleccionar</option>
                                                 <option value="Papeleria">Papelería</option>
                                                 <option value="Cafeteria">Cafetería</option>
-                                                <option value="Institucional">Institucional</option>
+                                                <!-- <option value="Institucional">Institucional</option> -->
                                                 <option value="Pagos">Pagos</option>
                                             </select>
                                         </div>
