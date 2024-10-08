@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="styles/login.css">
+    <title>Formularios de registro y inicio</title>
+</head>
+
+<body>
+    <div id="header">
+ 
+    </div>
+    <script src="./scripts/header.js"></script>    
+    <br><br><br>
+
+    <div style="height: 100vh;" class="container">
+    <div class="container-form register">
+        <div class="information">
+            <div class="info-childs">
+                <h2>Bienvenido</h2>
+                <p>Si ya tiene una cuenta creada inicie sesión con sus datos aqui</p>
+                <input type="button" value="Iniciar Sesión" id="sign-in">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Crear una Cuenta</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-facebook-circle'></i>
+                </div>
+                <p>o utiliza tu email para registrarte</p>
+                <form id="formularioLogin" class="form form-register"  novalidate>
+                    <div>
+                        <label>
+                            <i class='bx bx-user'></i>
+                            <input id="nombre_login" type="text" placeholder="usuario" name="userName" required>
+                           
+                        </label>
+                        <p  id="mensErrornombre" class ="parrafosMensaje"></p>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-phone'></i>
+                            <input id="telefono" type="phone" placeholder="Telefono" name="userphone" required>
+                            
+                        </label>
+                        <p id="mensteleerror" class ="parrafosMensaje"></p>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-envelope'></i>
+                            <input id="email" type="email" placeholder="Correo Electronico" name="userEmail" required>
+                            
+                        </label>
+                        <p id="mensEmailerror" class ="parrafosMensaje"></p>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-barcode'></i>
+                            <input id="codigo"type="code" placeholder="Codigo de estudiante" name="userCode" required>
+                           
+                        </label>
+                        <p id="menscodierror" class ="parrafosMensaje"></p>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-lock-alt'></i>
+                            <input id="contraeña" type="password" placeholder="Contraseña" name="userPassword" required >
+                            
+                        </label>
+                        <p id="mensErrorcontra" class ="parrafosMensaje" ></p>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-lock'></i>
+                            <input id="confirmarContraeña" type="passwordconfirm" placeholder="Confirmar contraseña" name="userPasswordConfirm" required>
+                            
+                        </label>
+                        <p id="confcontrError" class ="parrafosMensaje"></p>
+                    </div>
+
+                    <input type="submit" value="Registrarse">
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-form login hide">
+        <div class="information">
+            <div class="info-childs">
+                <h2>¡¡Bienvenido nuevamente!!</h2>
+                <p>Si aun no tiene una cuenta ingrese sus datos aqui </p>
+                <input type="button" value="Registrarse" id="sign-up">
+            </div>
+        </div>
+        <div class="form-information">
+            <div class="form-information-childs">
+                <h2>Iniciar Sesión</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-facebook-circle'></i>
+                </div>
+                <p>o Iniciar Sesión con una cuenta</p>
+                <form class="form form-login" novalidate>
+                    <div>
+                        <label>
+                            <i class='bx bx-envelope'></i>
+                            <input type="email" placeholder="Correo Electronico" name="userPassword">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <i class='bx bx-lock-alt'></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword">
+                        </label>
+                    </div>
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<br><br><br><br>
+    <div id="footer">
+
+    </div>
+    <script src="./scripts/footer.js"></script>
+    <script src="scripts/login.js"></script>
+</body>
+
+</html>

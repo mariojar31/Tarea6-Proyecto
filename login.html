@@ -10,13 +10,25 @@
 </head>
 <body>
     <div id="header">
-
+ 
     </div>
     <script src="./scripts/header.js"></script>    
     <br><br><br>
 
     <div style="height: 100vh;" class="container">
 
+        <form id="formularioLogin">
+            <input id="nombre_login" type="text"  required placeholder="Nombre"><p id="mensErrornombre"></p>
+            <input id="telefono" type="text" required placeholder="Teléfono"><p id="mensteleerror"></p>
+            <input id="codigo" type="text" required placeholder="Código estudiante"><p id="menscodierror"></p>
+            <input id="email" type="text" required placeholder="Email"><p id="mensEmailerror"></p>
+            <input id="contraeña" type="text" required placeholder="contraseña"><p id="mensErrorcontra"></p>
+            <input id="confirmarContraeña" type="text" required   placeholder="confirmar contraseña"><p id="confcontrError"></p>
+            <p id="mensajeErrorLogin">
+            <input type="submit" value="Registrarse">
+            <img src="./img/pexels-karolina-grabowska-5208687.jpg">
+
+        </form>            
     </div>
 
 
@@ -25,7 +37,7 @@
     </div>
     <script src="./scripts/footer.js"></script>    
 
-    
+    <script src="./scripts/login.js"></script>
     <script type="module" src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js "></script>
     <script nomodule src=" https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js "></script>
 
