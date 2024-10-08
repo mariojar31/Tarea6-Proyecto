@@ -44,6 +44,7 @@ formularioLogin.addEventListener('submit', (event)=>{
                
             });
             
+            
 
            
         }
@@ -108,7 +109,7 @@ mostrarMensaje(){
                 
             if( !/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\+\-\*\^\/@\{\}\[\]\)\(\.=,%()\?!"#$&\|°])[A-Za-z0-9\+\-\*\^\/@\{\}\[\]\)\(\.=,%()\?!"#$&\|°]{8,10}$/.test(inputActual)){
                 
-        let mensaContra="La contraseña debe incluir:\n 1. minimo una letra en mayuscula - 2.Minimo una letra en mayuscula - 3. Minimo Un caracter especial -  4. Minimo un número -  5. La contraseña debe tener minimo 8 carcatres y máximo 10 caracteres"
+        let mensaContra="Debe contener 8 digitos entre mayusculas, minusculas, carcateres especiales y números"
                 this.mensaje.innerText=mensaContra;
             }  
             else{
