@@ -5,11 +5,24 @@ const categ = url.searchParams.get('cat');
 const cap = categ.charAt(0).toUpperCase()+categ.slice(1);
 head.innerText= cap 
 console.log(categ)
-const fetchProductsCat = async(category)=>{
+
+const fetchJSON= async()=>{
+  
+  let products=JSON.parse(localStorage.getItem('productos'))
+  if(products==null){
     const response = await fetch('./db/products.json');
     const data = await response.json();
+    return data.productos
+  }else{
+    return products
+  }
+  
+}
 
-    data.productos.map(cat=>{
+const fetchProductsCat = async(category)=>{
+    const products = await fetchJSON()
+
+    products.map(cat=>{
       if(cat.categoria==category){
         console.log(cat)
         cat.items.map(item=>{

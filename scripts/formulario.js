@@ -51,11 +51,11 @@ async function Obtener_datos(){
                 
                     const row = document.createElement('tr')
                     row.innerHTML=`
-                                    <td scope="row"><input type="number" value=${producto.id} disabled style="width: 50px;"></td>
-                                    <td><input type="text" value="${producto.nombre}" disabled></td>
-                                    <td><input type="number" value=0 disabled></td>
-                                    <td><div class="d-flex flex-row"><span class="btn btn-danger mx-1" onClick="eliminar_productos('${cat.categoria}',${producto.id})">Borrar</span><span class="btn btn-primary mx-1">Modificar</span><span class="btn btn-success mx-1 disabled">Confirmar</span></div></td>
-                                `
+                                <td scope="row"><input type="number" value=${producto.id} disabled style="width: 50px;"></td>
+                                <td><input id="name${producto.id}" type="text" value="${producto.nombre}" disabled></td>
+                                <td><input id="cant${producto.id}" type="number" value=${producto.disponible} disabled></td>
+                                <td><div class="d-flex flex-row"><span class="btn btn-danger mx-1" onClick="eliminar_productos('${cat.categoria}',${producto.id})"><img src="./img/delete_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"></span><span class="btn btn-primary mx-1" onclick="actMod(${producto.id})"><img src="../img/box_edit_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"></span><span id="btnCheck${producto.id}"  onclick="saveChanges(${producto.id})" class="btn btn-success mx-1 disabled"><img src="./img/check_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"></span></div></td>
+                            `
                     productList.appendChild(row)
                 })
             }
