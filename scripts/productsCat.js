@@ -5,6 +5,7 @@ const categ = url.searchParams.get('cat');
 const cap = categ.charAt(0).toUpperCase()+categ.slice(1);
 head.innerText= cap 
 console.log(categ)
+<<<<<<< HEAD
 
 const fetchJSON= async()=>{
   
@@ -33,16 +34,32 @@ const fetchProductsCat = async(category)=>{
                                   <img src="${item.fotografia}">
                                   <div class="title">${item.nombre}</div>
                                   <div class="price">Precio: $${item.precio.toLocaleString('de-DE')}</div>
+=======
+
+
+const fetchProductsCat=(categoria=>{
+  let infolocal=JSON.parse(localStorage.getItem('productos'))
+    infolocal.forEach(element => {
+        if(element.categoria==categoria){
+            element.items.forEach(elemento=>{
+              let elementoCreado= document.createElement('div')
+                elementoCreado.innerHTML=`<div class="item mx-3 ">
+                                  <img src="${elemento.fotografia}">
+                                  <div class="title">${elemento.nombre}</div>
+                                  <div class="price">Precio: $${elemento.precio.toLocaleString('de-DE')}</div>
+>>>>>>> 14f02499a7224194bb2b12b88c21bfd711285bfe
                                   <button onclick="addToCard(0)">Add To Card</button>
                                 </item>`
+              listProducts.appendChild(elementoCreado)
+              
+     
+            })
+
+        }
+      });
     
-            listProducts.append(productoP)
-  
-      })
-      
-      }
-    })
-  
-}
+})
+
+
 
 fetchProductsCat(categ);
