@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+.container-form {
+    display: flex;
+    border-radius: 20px;
+    box-shadow: 0 0px 20px #1D4ED8;
+    height: 550px;
+    max-width: 900px;
+    transition: all 1s ease;
+    margin: 10px;
+}
+
+.information {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.info-childs {
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    background-image: url('img/pexels-karolina-grabowska-5208687.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgb(163, 163, 161);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-childs h2 {
+    font-size: 2.5rem;
+    color: #1D4ED8;
+}
+
+.info-childs p {
+    margin: 15px 0;
+    color: black;
+}
+
+.info-childs input {
+    background-color: transparent;
+    outline: none;
+    border: solid 2px #1D4ED8;
+    border-radius: 20px;
+    padding: 10px 20px;
+    color: #0a205c;
+    cursor: pointer;
+    transition: background-color .3s ease;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.info-childs input:hover {
+    background-color: #3D5684;
+    border: none;
+    color: #fff;
+    box-shadow: 0 2px 5px #3D6686;
+}
+
+
+.form-information {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    text-align: center;
+    background-color: #EDE8DC;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.form-information-childs {
+    padding: 0 30px;
+}
+
+.form-information-childs h2 {
+    color: #1D4ED8;
+    font-size: 2rem;
+}
+
+.form-information-childs p {
+    color: #3C3D37;
+}
+
+.icons {
+    margin: 15px 0;
+}
+
+.icons i {
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: #3D6686;
+    border: solid thin #3D6686;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.icons i:hover {
+    background-color: #3D5684;
+    color: #fff;
+}
+
+.form {
+    margin: 30px 0 0 0;
+}
+
+.form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    padding: 0 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.form label input {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #3D5684;
+}
+
+.form label i {
+    color: #3D5684;
+}
+
+.form input[type="submit"] {
+    background-color: #1D4ED8;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
+}
+
+.form input[type="submit"]:hover {
+    background-color: #3D6686;
+}
+
+.hide {
+    position: absolute;
+    transform: translateY(-300%);
+}
+
+
+@media screen and (max-width:580px) {
+
+    .container-form {
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .information {
+        width: 100%;
+        padding: 0; /* Quitar el padding para que la imagen ocupe todo el ancho */
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0;
+        overflow: hidden; /* Asegura que la imagen respete las esquinas redondeadas */
+    }
+
+    .info-childs {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        padding: 20px 10px 20px;
+    }
+
+    .form-information {
+        width: 100%;
+        padding: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 0;
+    }
+}
+
+.parrafosMensaje{
+
+    font-size:xx-small;
+}

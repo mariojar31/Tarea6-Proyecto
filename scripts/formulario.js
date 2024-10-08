@@ -30,7 +30,7 @@ formularioagrgar.addEventListener('submit',(event)=>{
 })
 
 
-const URL= './db/products.json';
+const URL= './db/products.json';  
 
 async function Obtener_datos(){
     productList.innerHTML=''
