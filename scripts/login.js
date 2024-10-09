@@ -21,33 +21,31 @@ let objetoLogin;
 formularioLogin.addEventListener('submit', (event)=>{
     event.preventDefault();
     let bdlogin=JSON.parse(localStorage.getItem('usuarios'))
-        if(teleErrortext.innerText==="" && nombErrortext.innerText==="" && emailErrortext.innerText==="" && contrErrortext.innerText===""&& conficontraErrortext.innerText==="" && codigErrortext===""){
-            
+        if(teleErrortext.innerText==="" && nombErrortext.innerText==="" && emailErrortext.innerText==="" && contrErrortext.innerText===""&& conficontraErrortext.innerText==="" && codigErrortext.innerText===""){
+        
             if(bdlogin===null){
+                bdlogin=[];
+                alert("esta nulo")
              objetoLogin=[
             {"id":1,"Nombre":nombreLogin.value,"Telefono":telefono.value,"Codigo": codigo.value,"Email":email.value,"Contraseña":contraeña.value}
                     
             ]
             bdlogin.push(objetoLogin)
             localStorage.setItem('usuarios',JSON.stringify(bdlogin));
+            alert("Usuario creado con éxito")
         }
-        else{
+        else{ 
+            
+            alert("ya hay")
             let arrayNumeros=[];
 
             bdlogin.forEach(element => {
-                arrayNumeros.push(element.id)
+               console.log( arrayNumeros.push(element.id));
                
             });
+            
 
-           let maximoLogin=  Math.max(...arrayNumeros);
-           maximoLogin++;
-
-           objetoLogin=[
-            {"id":maximoLogin,"Nombre":nombreLogin.value,"Telefono":telefono.value,"Codigo": codigo.value,"Email":email.value,"Contraseña":contraeña.value}
-                    
-            ]
-            bdlogin.push(objetoLogin)
-            localStorage.setItem('usuarios',JSON.stringify(bdlogin));
+           
         }
         }
         
