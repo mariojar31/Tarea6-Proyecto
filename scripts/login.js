@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     inputEmail.addEventListener("input", () => {
-        validarCampo(emailRegex, inputEmail, "El correo solo puede contener letras, números, puntos, guiones y guion bajo.");
+        validarCampo(emailRegex, inputEmail, "Ingrese un Email válido.");
     });
 
     inputPass.addEventListener("input", () => {
