@@ -116,6 +116,7 @@ formularioLogin.addEventListener('submit', async (event) => {
 
         bdlogin.push(objetoLogin);
         localStorage.setItem('usuarios', JSON.stringify(bdlogin));
+        window.location.href='login.html'
         alert("Usuario creado con éxito.");
     }
 });
