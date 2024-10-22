@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/Diseño_sin_título__7_-removebg-preview.png">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="styles/register.css">
-    <title>Formularios registro</title>
+    <title>Crear Cuenta | EduMarket</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bcrypt.js/5.0.1/bcrypt.min.js"></script>
     <script src="scripts/register.js" defer></script>
 
@@ -38,6 +39,7 @@
                         <i class='bx bxl-facebook-circle'></i>
                     </div>
                     <p>o utiliza tu email para registrarte</p>
+                    <div class="errorEmailRegistrado" style="color: red;"></div>
                     <form id="formularioLogin" class="form form-register"  novalidate>
                         <div>
                             <label>
@@ -75,7 +77,7 @@
                             <label>
                                 <i class='bx bx-lock-alt'></i>
                                 <input id="contraeña" type="password" placeholder="Contraseña" name="userPassword" required >
-
+                                <i class='bx bx-show-alt' id="togglePassword" style="cursor: pointer;"></i>
                             </label>
                             <p id="mensErrorcontra" class ="parrafosMensaje" ></p>
                         </div>
@@ -83,13 +85,13 @@
                             <label>
                                 <i class='bx bx-lock'></i>
                                 <input id="confirmarContraeña" type="password" placeholder="Confirmar contraseña" name="userPasswordConfirm" required>
-
+                                <i class='bx bx-show-alt' id="toggleConfirmPassword" style="cursor: pointer;"></i>
                             </label>
                             <p id="confcontrError" class ="parrafosMensaje"></p>
                         </div>
 
                         <input type="submit" value="Registrarse">
-                    </form>
+                    </form>                    
                 </div>
             </div>
         </div>

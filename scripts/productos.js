@@ -43,8 +43,14 @@ addEventListener('resize',()=>{
   
 })
 
-let mostrar=JSON.parse(localStorage.getItem('productos'))
-//console.log(mostrar)
+const fetchData = async()=>{
+  let mostrar= await JSON.parse(localStorage.getItem('productos'))
+  if(!mostrar){
+    const response = await fetch("../db/products.json")
+    const data = await response.json()
+    mostrar = data.productos
+    localStorage.setItem('productos',JSON.stringify(mostrar))
+  }
 
 mostrar.map(elemte=>{
     if(elemte.categoria=='Pagos'){
@@ -104,3 +110,10 @@ mostrar.map(elemte=>{
   }
   
 })
+
+}
+
+fetchData()
+
+
+

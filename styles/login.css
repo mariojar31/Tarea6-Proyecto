@@ -58,6 +58,7 @@
 .info-childs p {
     margin: 15px 0;
     color: black;
+    font-weight: 600;
 }
 
 .info-childs input {
@@ -135,7 +136,6 @@
 .form label {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
     border-radius: 20px;
     padding: 0 10px;
     background-color: #fff;
@@ -163,7 +163,6 @@
     border: none;
     padding: 10px 15px;
     cursor: pointer;
-    margin-top: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);
 }
 

@@ -1,7 +1,22 @@
 const header = document.getElementById('header');
 
         const fetchHeader = async()=>{
-            const response = await fetch('./componentes/header/header.html')
+            
+            const log = sessionStorage.getItem('log');
+            const dataLog = JSON.parse(log);
+            
+            addEventListener('DOMContentLoaded',()=>{
+                const userName = document.getElementById('userName');
+
+                if(userName){
+                    console.log("ENtro")
+                    userName.innerText=dataLog.name;
+                }
+            })
+            
+
+            const response = await fetch(`./componentes/header/${dataLog && dataLog.rol=="Administrador"?"headerAdmin": dataLog && dataLog.rol=="Estudiante"?"headerUser":"header"}.html`)
+
             const data = await response.text()
 
             header.innerHTML=data;
@@ -14,6 +29,10 @@ const header = document.getElementById('header');
 
         }
 
+        const logout = ()=>{
+            sessionStorage.removeItem('log');
+            window.location.href = 'login.html'
+        }
 
 
         fetchHeader()

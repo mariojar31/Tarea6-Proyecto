@@ -9,6 +9,17 @@ const borrarBtn= document.getElementById('')
 const productList = document.getElementById('productList')
 const select = document.getElementById('selectCategory')
 
+// Obtener datos de sesion
+const log = sessionStorage.getItem('log')
+const dataLog = JSON.parse(log)
+
+if(dataLog && dataLog.rol=="Estudiante"){
+    window.location.href = 'index.html'
+}else if(!dataLog){
+    window.location.href = 'login.html'
+}
+
+
 let filter = 'none'
 select.addEventListener('change',()=>{
     const selectedValue = select.value

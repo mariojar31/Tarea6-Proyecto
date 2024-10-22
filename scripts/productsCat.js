@@ -7,8 +7,16 @@ head.innerText= cap
 console.log(categ)
 
 
-const fetchProductsCat=(categoria=>{
+const fetchProductsCat=async(categoria)=>{
   let infolocal=JSON.parse(localStorage.getItem('productos'))
+
+  if(!infolocal){
+    const response = await fetch("../db/products.json")
+    const data = await response.json()
+    infolocal = data.productos
+    localStorage.setItem('productos',JSON.stringify(infolocal))
+  }
+
     infolocal.forEach(element => {
         if(element.categoria==categoria){
             element.items.forEach(elemento=>{
@@ -27,7 +35,7 @@ const fetchProductsCat=(categoria=>{
         }
       });
     
-})
+}
 
 
 
