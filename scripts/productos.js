@@ -63,7 +63,7 @@ mostrar.map(elemte=>{
                                 <img src="${ele.fotografia}">
                                 <div class="title">${ele.nombre}</div>
                                 <div class="price">Precio: $${ele.precio}</div>
-                                <button onclick="addToCard(0)">Add To Card</button>
+                                <button onclick="ingresar(this)">Add To Card</button>
                                 
                               </item>`
   
@@ -81,7 +81,7 @@ mostrar.map(elemte=>{
                                 <img src="${ele.fotografia}">
                                 <div class="title">${ele.nombre}</div>
                                 <div class="price">Precio: $${ele.precio}</div>
-                                <button onclick="addToCard(0)">Add To Card</button>
+                                <button onclick="ingresar(this)">Add To Card</button>
                               </item>`
   
         divCafeteria.append(productoP)
@@ -100,7 +100,7 @@ mostrar.map(elemte=>{
                               <img src="${ele.fotografia}">
                               <div class="title">${ele.nombre}</div>
                               <div class="price">Precio: $${ele.precio}</div>
-                              <button onclick="addToCard(0)">Add To Card</button>
+                              <button onclick="ingresar(this)">Add To Card</button>
                             </item>`
 
       divPapeleria.append(productoP)
