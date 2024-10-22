@@ -1,3 +1,4 @@
+
 function ingresar(boton_precionado) {
     const precioElement = boton_precionado.parentElement.querySelector('.price');
     const precio = precioElement ? parseFloat(precioElement.innerText.replace(/[^\d.-]/g, '')) : 0; // Convertir a número
@@ -31,6 +32,7 @@ function ingresar(boton_precionado) {
     crearitem_precio.innerText = `Precio: $${precio.toFixed(2)}`; // Asegurarse de que el precio esté bien formateado
     crear_imagen.src = imagen;
 
+
     // Añadir elementos al carrito
     crearitem_carrito.appendChild(crear_imagen);
     crearitem_carrito.appendChild(crearcanti);
@@ -61,6 +63,7 @@ function agregarMas(agrgera, crearcanti, crearitem_precio, precio) {
         crearcanti.innerText = parseInt(crearcanti.innerText) + 1; // Aumentar la cantidad
         crearitem_precio.innerText = `Precio: $${(precio * parseInt(crearcanti.innerText)).toFixed(2)}`; // Actualizar el precio
         total_carrito(); // Actualizar el total del carrito
+        
     });
 }
 
@@ -68,13 +71,20 @@ function total_carrito() {
     const carrito = document.getElementById('carrito');
     const totalvruni = carrito.querySelectorAll('.item-precio');
     const totales_array = Array.from(totalvruni);
+    const totalProducts = carrito.querySelectorAll('.item-cantidad');
+    const totalProductsArray = Array.from(totalProducts);
 
     let suma = 0;
+    let counter = 0;
     totales_array.forEach(element => {
         const valor = parseFloat(element.innerText.replace(/[^0-9.]/g, ''));
         if (!isNaN(valor)) {
             suma += valor;
         }
+    });
+
+    totalProductsArray.forEach(product => {
+        counter+=parseInt(product.innerText)
     });
 
     const formatter = new Intl.NumberFormat('es-CO', {
@@ -83,8 +93,21 @@ function total_carrito() {
         minimumFractionDigits: 2
     });
 
+    const emptyCart = document.getElementById('emptyCart')
+    if(counter>0){
+        emptyCart.classList.remove('d-block')
+        emptyCart.classList.add('d-none')
+    }else{
+        emptyCart.classList.remove('d-none')
+        emptyCart.classList.add('d-block')
+    }
+
     const totalapagar = document.getElementById('total');
     totalapagar.innerText = `Total: ${formatter.format(suma)}`;
+
+    const canTotal = document.getElementById('canTotal');
+    canTotal.innerText=`Total Productos: ${counter}`
+
 }
 
 function irACar() {

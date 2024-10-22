@@ -51,9 +51,18 @@
                 </a>
                 <div class="dropdown-menu p-2" style="left: auto; right: 0;">
                     <form id="carrito-form">
-                        <div id="carrito"></div>
+                        <div id="carrito">
+                            <p id="emptyCart" class="text-center">
+                                Carrito Vacio
+                            </p>
+                        </div>
+                        <p id="canTotal">Total Productos: 0</p>
                         <p id="total">Total: $0.00</p>
-                        <button type="button" class="boton_salir" onclick="ingresar(this)">Salir</button>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <a href="./login.html">
+                                <button type="button" class="boton_salir" onclick="ingresar(this)">Logueate para pagar</button>
+                            </a>
+                        </div>
                     </form>
                 </div>
             </div>

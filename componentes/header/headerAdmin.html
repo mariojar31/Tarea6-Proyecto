@@ -43,9 +43,26 @@
               </li>
             </ul>
             <div class="d-flex">
-              <a href="./cart.html"></a>
-                <img id="iconCart1" style="width: 40px; height: auto;" src="../../img/carro-de-la-compra-unscreen 1.png" alt="Carrito" class="icon-log">
-              </a>
+              <div class="dropdown" id="posCarr" style="position: relative; z-index: 1000;">
+                <a href="#" id="iconCart1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img style="width: 40px; height: auto;" src="../../img/carro-de-la-compra-unscreen 1.png" alt="Carrito" class="icon-log">
+                </a>
+                <div class="dropdown-menu p-2" style="left: auto; right: 0;">
+                    <form id="carrito-form">
+                        <div id="carrito">
+                            <p id="emptyCart" class="text-center">
+                                Carrito Vacio
+                            </p>
+                        </div>
+                        <p id="canTotal">Total Productos: 0</p>
+                        <p id="total">Total: $0.00</p>
+                        <a href="./pagos.html">
+                          <button type="button" class="boton_salir" onclick="ingresar(this)">Ir a Pagar</button>
+                        </a>
+                        
+                    </form>
+                </div>
+            </div>
               
               <li class="nav-item dropdown">
                 <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

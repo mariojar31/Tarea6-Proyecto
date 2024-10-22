@@ -63,7 +63,7 @@ mostrar.map(elemte=>{
                                 <img src="${ele.fotografia}">
                                 <div class="title">${ele.nombre}</div>
                                 <div class="price">Precio: $${ele.precio}</div>
-                                <button onclick="ingresar(this)">Add To Card</button>
+                                <button onclick="ingresar(this)" data-bs-toggle="dropdown" aria-expanded="false">Add To Card</button>
                                 
                               </item>`
   
