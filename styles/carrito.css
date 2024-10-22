@@ -1,0 +1,83 @@
+/* Estilo del contenedor del carrito */
+#carrito {
+    padding: 10px; /* Espaciado interno */
+    background-color: rgba(245, 245, 245, 0.9); /* Fondo ligero para contraste */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilo de cada item en el carrito */
+.item-carrito {
+    display: flex;
+    align-items: center; /* Centrar verticalmente los elementos */
+    justify-content: space-between; /* Espaciado entre elementos */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separador entre items */
+    padding: 10px 0; /* Espaciado vertical */
+}
+
+/* Estilo de la imagen del item */
+.item-imagen {
+    width: 50px; /* Tamaño de la imagen */
+    height: 50px; /* Tamaño de la imagen */
+}
+
+/* Estilo del precio */
+.item-precio {
+    color: #333; /* Color de texto gris oscuro */
+}
+
+/* Estilo de la cantidad */
+.item-cantidad {
+    margin: 0 35px; /* Separar más de los otros elementos */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo para el botón de agregar cantidad */
+.button-agregar {
+    background-color: #FF8C00; /* Naranja oscuro */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave */
+    margin-right: 5px; /* Separar el botón "+" del botón "Eliminar" */
+    margin-left: 5px;
+}
+
+/* Efecto al pasar el mouse sobre el botón de agregar */
+.button-agregar:hover {
+    background-color: #FFA500; /* Naranja más brillante */
+}
+
+/* Estilo para el botón de eliminar */
+.cerrar-item {
+    background-color: #1D4ED8; /* Azul deseado */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre el botón de eliminar */
+.cerrar-item:hover {
+    background-color: #1A73E8; /* Azul más brillante */
+}
+
+/* Estilo para el botón de salir */
+.boton_salir {
+    background-color: #FF8C00; /* Naranja oscuro */
+    border: none; /* Sin borde */
+    color: white; /* Texto blanco */
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor al pasar el mouse */
+    margin-left: 15px; /* Separación del botón eliminar */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto al pasar el mouse sobre el botón de salir */
+.boton_salir:hover {
+    background-color: #FFA500; /* Naranja más brillante */
+}
