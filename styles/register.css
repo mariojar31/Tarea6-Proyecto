@@ -51,13 +51,16 @@
 }
 
 .info-childs h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: #1D4ED8;
+    font-weight: bold;
 }
 
 .info-childs p {
     margin: 15px 0;
     color: black;
+    font-weight: bold;
+    font-size: 20px;
 }
 
 .info-childs input {
@@ -72,6 +75,7 @@
     font-size: 16px;
     font-weight: bold;
     margin: 0px;
+    margin-top: 40px;
     
 }
 
@@ -167,7 +171,7 @@
     background-color: #3D6686;
 }
 
-@media screen and (max-width:900px) {
+@media screen and (max-width:990px) {
 
     .container-form {
         height: auto;
