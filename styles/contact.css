@@ -40,7 +40,7 @@ section .contactForm {
     padding: 40px;
     width: 90%;
     height: 98%;
-    background: #1CB2D9;
+    background: #4ad0f196;
     box-shadow: 1px 9px 20px -5px rgba(0, 0, 0, 0.59);
     border-radius: 30px;
 }
@@ -66,12 +66,14 @@ section .contactForm .form .texto h2 {
     color: #1D4DE8;
     font-size: 2em;
     margin-bottom: 10px;
+    font-weight: 600;
 }
 
 section .contactForm .form .texto p {
     color: #3D6686;
     line-height: 1.5;
     margin-bottom: 20px;
+    font-weight: 600;
 }
 
 /* Cajas de texto */
