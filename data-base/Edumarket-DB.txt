@@ -1,0 +1,105 @@
+-- BASE DE DATOS EDUMARKET
+-- CREACION DE TABLAS
+
+CREATE TABLE Estudiantes (
+    id_estudiante BIGINT(20) PRIMARY KEY,
+    nombreEstudiante VARCHAR(100) NOT NULL
+);
+ 
+CREATE TABLE Usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombreUsuario VARCHAR(100) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    contrasena VARCHAR(20) NOT NULL,
+    is_admin BOOLEAN NOT NULL DEFAULT FALSE,
+    estudianteId BIGINT(20),
+    FOREIGN KEY (estudianteId) REFERENCES Estudiantes(id_estudiante)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+CREATE TABLE Estados(
+    id_estado INT AUTO_INCREMENT PRIMARY KEY,
+    nombreEstado VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE Ordenes (
+    id_orden INT AUTO_INCREMENT PRIMARY KEY,
+    cantidad INT NOT NULL,
+    usuarioId INT,
+    fecha  DATE NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    valorTotal DECIMAL(10,2) NOT NULL,
+    estadoId INT,
+    FOREIGN KEY (usuarioId) REFERENCES usuario(id_usuario),
+    FOREIGN KEY (estadoId) REFERENCES Estados(id_estado),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+CREATE TABLE Productos (
+    id_producto INT AUTO_INCREMENT PRIMARY KEY,
+    nombreProducto VARCHAR(100) NOT NULL,
+    precio DECIMAL(10,2) NOT NULL,
+    categoria VARCHAR(100) NOT NULL,
+    stock INT NOT NULL,
+);
+
+CREATE TABLE ordenProducto (
+    id_ordenProducto INT AUTO_INCREMENT PRIMARY KEY,
+    cantidad INT NOT NULL,
+    ordenId INT,
+    productoId INT,
+    subtotal DECIMAL,
+    FOREIGN KEY (ordenId) REFERENCES orden(id_orden),
+    FOREIGN KEY (productoId) REFERENCES producto(id_product)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);
+
+-- INSERCION LISTA DE ESTUDIANTES
+
+INSERT INTO Estudiantes (id_estudiante, nombreEstudiante) VALUES
+(101234567, 'Juan Pérez'),
+(101234568, 'María Gómez'),
+(101234569, 'Carlos López'),
+(101234570, 'Ana Martínez'),
+(101234571, 'Luis Rodríguez'),
+(101234572, 'Elena Torres'),
+(101234573, 'Javier Sánchez'),
+(101234574, 'Sofía Romero'),
+(101234575, 'Diego Morales'),
+(101234576, 'Valeria Díaz');
+
+-- CREACION DE NUEVOS USUARIOS
+
+INSERT INTO Usuarios (nombreUsuario, email, contrasena, is_admin, estudianteId) VALUES
+('juanperez', 'juan.perez@example.com', 'Contrasena1', FALSE, 101234567),
+('mariagomez', 'maria.gomez@example.com', 'Contrasena2', FALSE, 101234568),
+('carloslopez', 'carlos.lopez@example.com', 'Contrasena3', FALSE, 101234569),
+('anama', 'ana.martinez@example.com', 'Contrasena4', FALSE, 101234570),
+('luisrodriguez', 'luis.rodriguez@example.com', 'Contrasena5', FALSE, 101234571),
+('elenatorres', 'elena.torres@example.com', 'Contrasena6', FALSE, 101234572),
+('javiersanchez', 'javier.sanchez@example.com', 'Contrasena7', FALSE, 101234573),
+('sofiaromero', 'sofia.romero@example.com', 'Contrasena8', FALSE, 101234574),
+('diegomorales', 'diego.morales@example.com', 'Contrasena9', FALSE, 101234575),
+('valeriadiaz', 'valeria.diaz@example.com', 'Contrasena0', FALSE, 101234576);
+
+-- INSERCION DE ESTADOS
+
+INSERT INTO Estados (nombreEstado)
+VALUES ('Pendiente'), ('Entregado'), ('Fallido'), ('Pagado');
+
+-- CREACION DE PRODUCTOS
+
+INSERT INTO Productos (categoria, nombreProducto, stock, precio)
+VALUES ('Cafeteria', 'empanada', 8, 2000), ('Cafeteria', 'jugo natural', 8, 4500), ('papeleria', 'lapiz', 8, 1000), ('Pagos', 'matricula', 8, 200000);
+
+-- CREACION DE ORDENES
+
+INSERT INTO Ordenes (cantidad, fecha, estadoId, valorTotal, usuarioId)
+VALUES (2, NOW(), 1, 4000, 1), (2, NOW(), 1, 4000, 2), (1, NOW(), 2, 1000, 3);
+
+-- CREACION DE REL ORDEN_PRODUCTO
+
+INSERT INTO ordenProducto (id_ordenProducto, cantidad, ordenId, productoId, subtotal) VALUES (NULL, '2', '7', '1', '4000'), (NULL, '1', '7', '2', '9000'), (NULL, '1', '8', '3', '1000'), (NULL, '1', '9', '4', '200000'), (NULL, '1', '8', '1', '2000');
+
+
