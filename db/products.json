@@ -365,6 +365,101 @@
           "top": false
         }
       ]
+    },
+    {
+      "categoria": "Institucional",
+      "items": [
+        {
+          "id": 39,
+          "nombre": "Camisa blanca cuello corbata",
+          "descripcion": "Camiseta institucional blanca manga larga",
+          "precio": 45000,
+          "fotografia": "./institucional/camisa-blanca.png",
+          "disponible": 0,
+          "top": true
+        },
+        {
+          "id": 40,
+          "nombre": "Camiseta negra",
+          "descripcion": "Camiseta negra para uniforme deportivo hombre",
+          "precio": 20000,
+          "fotografia": "./institucional/camisa-negra.png",
+          "disponible": 0,
+          "top": true
+        },
+        {
+          "id": 41,
+          "nombre": "Camiseta blanca",
+          "descripcion": "Camiseta blanca para uniforme deportivo mujer",
+          "precio": 20000,
+          "fotografia": "./institucional/camiseta.png",
+          "disponible": 0,
+          "top": true
+        },
+        {
+          "id": 42,
+          "nombre": "Corbata",
+          "descripcion": "Corbata Uniforme formal",
+          "precio": 10000,
+          "fotografia": "./institucional/corbataa.png",
+          "disponible": 5,
+          "top": true
+        },
+        {
+          "id": 43,
+          "nombre": "Jardinera Institucional",
+          "descripcion": "Jardinera institucional",
+          "precio": 50000,
+          "fotografia": "./institucional/falda.png",
+          "disponible": 5,
+          "top": true
+        },
+        {
+          "id": 44,
+          "nombre": "Pantalon Institucional",
+          "descripcion": "Pantalon azul oscuro institucional",
+          "precio": 50000,
+          "fotografia": "./institucional/pantalon.png",
+          "disponible": 5,
+          "top": true
+        },
+        {
+          "id": 45,
+          "nombre": "Sudadera Institucional",
+          "descripcion": "Sudadera Institucional",
+          "precio": 65000,
+          "fotografia": "./institucional/sudadera.png",
+          "disponible": 5,
+          "top": true
+        },
+        {
+          "id": 46,
+          "nombre": "Tenis blancos",
+          "descripcion": "Tenis blancos para uniforme deportivo",
+          "precio": 75000,
+          "fotografia": "./institucional/tenis.png",
+          "disponible": 5,
+          "top": true
+        },
+        {
+          "id": 47,
+          "nombre": "Zapato negro hombre",
+          "descripcion": "Zapato para uniforme formal",
+          "precio": 89000,
+          "fotografia": "./institucional/zapatohombre.png",
+          "disponible": 5,
+          "top": true
+        },
+        {
+          "id": 48,
+          "nombre": "Zapato negro mujer",
+          "descripcion": "Zapato para uniforme formal",
+          "precio": 87000,
+          "fotografia": "./institucional/zapatomujer.png",
+          "disponible": 5,
+          "top": true
+        }
+      ]
     }
   ]
 }

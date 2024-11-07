@@ -1,6 +1,8 @@
 const divPagos = document.getElementById('pagos');
 const divCafeteria = document.getElementById('cafeteria');
 const divPapeleria = document.getElementById('papeleria');
+const divInstitucional = document.getElementById('institucional');
+
 // const swiperContainer = document.querySelector('swiper-container');
 const swiperContainers = document.querySelectorAll('swiper-container');
 
@@ -63,7 +65,7 @@ mostrar.map(elemte=>{
                                 <img src="${ele.fotografia}">
                                 <div class="title">${ele.nombre}</div>
                                 <div class="price">Precio: $${ele.precio}</div>
-                                <button onclick="ingresar(this)" data-bs-toggle="dropdown" aria-expanded="false">Add To Card</button>
+                                <button onclick="ingresar(this)" data-bs-toggle="dropdown" aria-expanded="false">Añadir al carrito</button>
                                 
                               </item>`
   
@@ -81,7 +83,7 @@ mostrar.map(elemte=>{
                                 <img src="${ele.fotografia}">
                                 <div class="title">${ele.nombre}</div>
                                 <div class="price">Precio: $${ele.precio}</div>
-                                <button onclick="ingresar(this)">Add To Card</button>
+                                <button onclick="ingresar(this)">Añadir al carrito</button>
                               </item>`
   
         divCafeteria.append(productoP)
@@ -100,14 +102,29 @@ mostrar.map(elemte=>{
                               <img src="${ele.fotografia}">
                               <div class="title">${ele.nombre}</div>
                               <div class="price">Precio: $${ele.precio}</div>
-                              <button onclick="ingresar(this)">Add To Card</button>
+                              <button onclick="ingresar(this)">Añadir al carrito</button>
                             </item>`
 
       divPapeleria.append(productoP)
 
       })
 
-  }
+    }
+
+    else if (elemte.categoria == 'Institucional') {
+      let elementosI = elemte.items;
+      elementosI.map(ele => {
+          const productoP = document.createElement('swiper-slide');
+          productoP.innerHTML = `<div class="item">
+                                  <img src="${ele.fotografia}">
+                                  <div class="title">${ele.nombre}</div>
+                                  <div class="price">Precio: $${ele.precio}</div>
+                                  <button onclick="ingresar(this)">Añadir al carrito</button>
+                                </div>`;
+          divInstitucional.append(productoP);
+      });
+    }
+
   
 })
 

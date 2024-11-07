@@ -9,19 +9,18 @@ const log = sessionStorage.getItem("log")
 const dataLog = JSON.parse(log)
 
 if(dataLog && dataLog.rol=="Administrador"){
-    window.location.href='Admin.html'
-}else if(dataLog && dataLog.rol=="Estudiante"){
-    window.location.href='index.html'
+    window.location.href='Admin.html';
+}else if (dataLog && dataLog.rol=="Estudiante"){
+    window.location.href='index.html';
 }
-
 
 const emailRegex = /^[a-zA-Z0-9]{1,20}([.-_]{1}[a-zA-Z0-9]{1,10})?@[a-zA-Z0-9]{1,10}([-.]{1}[a-zA-Z0-9]{1,20})?\.[a-zA-Z0-9]{2,6}$/;
 const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\+\-\*\^\/@\{\}\[\]\)\(\.=,%()\?!"#$&\|°])[A-Za-z0-9\+\-\*\^\/@\{\}\[\]\)\(\.=,%()\?!"#$&\|°]{8,15}$/;
 
 // Función para validar un campo
 const validarCampo = (regex, input, mensajeError) => {
-    if (regex.test(input.value) || input.value=="") {
-        input.classList.remove("input-error");
+    if (regex.test(input.value) || input.value == "") {
+        input.classList.remove("input-error");   
         alertaErrorLogin.innerText = "";
         return true;
     } else {
@@ -31,13 +30,12 @@ const validarCampo = (regex, input, mensajeError) => {
     }
 };
 
-
 // Función para encriptar la contraseña
 async function unhashPassword(password) {
     const key = "Qwerty123*"; 
     const bytes = await CryptoJS.AES.decrypt(password, key);
     const contraseñaDesencriptada = await bytes.toString(CryptoJS.enc.Utf8);
-    return contraseñaDesencriptada
+    return contraseñaDesencriptada;
 }
 
 // Función para enviar el formulario
@@ -50,21 +48,30 @@ const enviarFormulario = async (formulario) => {
         const usuarioEncontrado = usuarios.find(usuario => usuario.Email === inputEmail.value);
 
         if (usuarioEncontrado) {
-            console.log(usuarioEncontrado)
-            const unhashedPassword = await unhashPassword(usuarioEncontrado.Contraseña)
+            console.log(usuarioEncontrado);
+            const unhashedPassword = await unhashPassword(usuarioEncontrado.Contraseña);
             
             if (unhashedPassword === inputPass.value) {
-                alertaExitoLogin.innerText = "Inicio de sesión exitoso.";
-                setTimeout(()=>{alertaErrorLogin.innerText = "";},2000)
-        //  Se crea la sesión 
-                sessionStorage.setItem("log",JSON.stringify({"userId":usuarioEncontrado.Codigo,"name":usuarioEncontrado.Nombre,"rol":usuarioEncontrado.Rol}))
-                
-                if(usuarioEncontrado.Rol=="Estudiante"){
-                    window.location.href = 'index.html';}
-                    else if(usuarioEncontrado.Rol=="Administrador"){
-    
-                        window.location.href='Admin.html'
+                // Mostrar el modal de éxito
+                const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                successModal.show();
+
+                // Cerrar el modal después de 2 segundos y redirigir
+                setTimeout(function () {
+                    successModal.hide(); // Cerrar el modal
+                    sessionStorage.setItem("log", JSON.stringify({
+                        "userId": usuarioEncontrado.Codigo,
+                        "name": usuarioEncontrado.Nombre,
+                        "rol": usuarioEncontrado.Rol
+                    }));
+
+                    if (usuarioEncontrado.Rol == "Estudiante") {
+                        window.location.href = 'index.html';
+                    } else if (usuarioEncontrado.Rol == "Administrador") {
+                        window.location.href = 'Admin.html';
                     }
+                }, 2000); // Cambia el tiempo aquí si es necesario
+                
             } else {
                 alertaErrorLogin.innerText = "Credenciales incorrectas. Por favor, verifica tu correo y contraseña.";
                 alertaExitoLogin.innerText = "";
@@ -99,7 +106,6 @@ const pass = document.getElementById('pass');
 const icon = document.getElementById('togglePassword');
 
 icon.addEventListener('click', function () {
-    
     const type = pass.getAttribute('type') === 'password' ? 'text' : 'password';
     pass.setAttribute('type', type); // Cambiamos el tipo de input
 

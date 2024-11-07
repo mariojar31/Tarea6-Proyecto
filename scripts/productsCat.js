@@ -24,8 +24,8 @@ const fetchProductsCat=async(categoria)=>{
                 elementoCreado.innerHTML=`<div class="item mx-3 ">
                                   <img src="${elemento.fotografia}">
                                   <div class="title">${elemento.nombre}</div>
-                                  <div class="price">Precio: $${elemento.precio.toLocaleString('de-DE')}</div>
-                                  <button onclick="addToCard(0)">Add To Card</button>
+                                  <div class="price">Precio: $${elemento.precio}</div>
+                                  <button onclick="ingresar(this)">Añadir al carrito</button>
                                 </item>`
               listProducts.appendChild(elementoCreado)
               

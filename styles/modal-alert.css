@@ -1,0 +1,35 @@
+.modal-dialog {
+    width: 400px !important; /* Ancho fijo del modal */
+    max-width: 90% !important; /* Ancho máximo del modal */
+}
+
+
+.modal-title {
+    font-size: 30px;
+    color: rgb(26, 101, 199);
+    text-align: center;
+}
+
+.modal-body {
+    font-size: 24px;
+    margin: 15px 0;
+    text-align: center;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-footer .btn-secondary {
+    color: white;
+    background: #DEB307;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-footer .btn-secondary:hover {
+    background-color: #c9ac39;
+}

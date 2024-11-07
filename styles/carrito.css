@@ -1,83 +1,88 @@
-/* Estilo del contenedor del carrito */
+/* Contenedor del carrito */
 #carrito {
-    padding: 10px; /* Espaciado interno */
-    background-color: rgba(245, 245, 245, 0.9); /* Fondo ligero para contraste */
-    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px;
+    background-color: #dddcdc;
+    border-radius: 5px;
 }
 
 /* Estilo de cada item en el carrito */
 .item-carrito {
     display: flex;
-    align-items: center; /* Centrar verticalmente los elementos */
-    justify-content: space-between; /* Espaciado entre elementos */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Separador entre items */
-    padding: 10px 0; /* Espaciado vertical */
+    align-items: center;
+    gap: 8px; /* Menos espacio entre los elementos */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
 }
 
-/* Estilo de la imagen del item */
+/* Estilo de los botones + y - */
+.button-disminuir, .button-agregar {
+    background-color: #FF8C00; /* Naranja */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 8px; /* Espaciado reducido */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-size: 1.2rem; /* Tamaño de fuente ajustado */
+    width: 40px; /* Ancho fijo */
+    height: 40px; /* Alto fijo */
+    display: flex; /* Usamos flexbox para centrar el contenido */
+    justify-content: center; /* Centrar contenido horizontalmente */
+    align-items: center;
+}
+
+/* Estilo del texto de la cantidad */
+.item-cantidad {
+    font-size: 1.2rem; /* Tamaño de fuente ajustado */
+    margin: 0 4px; /* Espacio reducido entre la cantidad y los botones */
+}
+
+/* Imagen del producto */
 .item-imagen {
-    width: 50px; /* Tamaño de la imagen */
-    height: 50px; /* Tamaño de la imagen */
+    width: 50px;
+    height: 50px;
+    margin-right: 8px; /* Añadir un poquito de espacio entre imagen y precio */
+}
+
+/* Botón de eliminar */
+.cerrar-item {
+    background-color: #1D4ED8; /* Azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 5px 10px; /* Espaciado interno */
+    margin-left: 8px; /* Ajustado para mayor cercanía con el botón + */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
 }
 
 /* Estilo del precio */
 .item-precio {
-    color: #333; /* Color de texto gris oscuro */
+    color: black; /* Color negro para el valor del precio */
+    font-size: 1.1rem; /* Tamaño ajustado */
+    margin-left: 10px; /* Espacio entre imagen y precio */
 }
 
-/* Estilo de la cantidad */
-.item-cantidad {
-    margin: 0 35px; /* Separar más de los otros elementos */
-    font-weight: bold; /* Texto en negrita */
-}
-
-/* Estilo para el botón de agregar cantidad */
-.button-agregar {
-    background-color: #FF8C00; /* Naranja oscuro */
-    border: none; /* Sin borde */
-    color: white; /* Texto blanco */
-    padding: 5px 10px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    transition: background-color 0.3s; /* Transición suave */
-    margin-right: 5px; /* Separar el botón "+" del botón "Eliminar" */
-    margin-left: 5px;
-}
-
-/* Efecto al pasar el mouse sobre el botón de agregar */
-.button-agregar:hover {
-    background-color: #FFA500; /* Naranja más brillante */
-}
-
-/* Estilo para el botón de eliminar */
-.cerrar-item {
-    background-color: #1D4ED8; /* Azul deseado */
-    border: none; /* Sin borde */
-    color: white; /* Texto blanco */
-    padding: 5px 10px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    transition: background-color 0.3s; /* Transición suave */
-}
-
-/* Efecto al pasar el mouse sobre el botón de eliminar */
-.cerrar-item:hover {
-    background-color: #1A73E8; /* Azul más brillante */
-}
-
-/* Estilo para el botón de salir */
+/* Estilo del botón de logueo */
 .boton_salir {
-    background-color: #FF8C00; /* Naranja oscuro */
+    background-color: #FF8C00; /* Naranja */
+    color: white; /* Color del texto */
     border: none; /* Sin borde */
-    color: white; /* Texto blanco */
-    padding: 5px 10px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
-    cursor: pointer; /* Cambiar cursor al pasar el mouse */
-    margin-left: 15px; /* Separación del botón eliminar */
-    transition: background-color 0.3s; /* Transición suave */
+    padding: 8px 12px; /* Espaciado interno */
+    text-align: center; /* Alinear el texto */
+    display: inline-block; /* Asegurar que se comporte como botón */
+    transition: background-color 0.3s; /* Transición suave para el hover */
 }
 
-/* Efecto al pasar el mouse sobre el botón de salir */
+/* Efecto hover del botón de logueo */
 .boton_salir:hover {
-    background-color: #FFA500; /* Naranja más brillante */
+    background-color: #e67600; /* Tono más oscuro de naranja al pasar el ratón */
+}
+
+#canTotal{
+    font-weight: bold;
+}
+
+#total{
+    font-weight: bold;
+    font-size: 18px;
 }
