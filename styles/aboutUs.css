@@ -9,7 +9,6 @@ body {
 
 .bg-custom-g {
     background-color: #eeeeee;
-    margin-top: -15px;
 }
 
 
@@ -29,25 +28,17 @@ body {
     margin-top: 70px;
 }
 
-.service-card {
-    width: 27%;
-    margin: 10px;
-    text-align: center;
+.foto{
+    border-radius: 5px;
 }
-
-.description-service {
-    text-align: center;
-    font-size: 0.8rem;
-    line-height: 1.2;
-}
-
-.img-service-card {
-    width: 40%;
-}
-
-
 
 /* PERFIL DE DESARROLLADORES */
+
+#line {
+    border-top: 2.5px solid #84929e;
+    width: 85%;
+    margin: 20px auto;
+}
 
 #profiles {
     margin-bottom: 50px;
@@ -56,7 +47,6 @@ body {
 #profiles .card {
     width: 45vw;
     margin: 15px;
-    /* Espaciado entre tarjetas */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.315);
 
 }
@@ -66,14 +56,17 @@ body {
     width: 180px;
     object-fit: cover;
     margin-top: 20px;
-    border: 1.5px solid rgb(38, 110, 204);
-    border-left: 1.5px solid #46d4ff;
-    border-bottom: 1.5px solid #3bdfd1;
+    box-shadow: 0 0 15px 5px rgba(16, 73, 119, 0.7);
 }
 
 .imagen-red-social {
     width: 30px;
     margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagen-red-social:hover {
+    transform: scale(1.5);
 }
 
 .title-card {
@@ -82,4 +75,234 @@ body {
 
 #container-card {
     margin-bottom: 50px;
+}
+
+.perfil-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 45px;
+    text-align: center;
+}
+
+.text-container h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.text-container p {
+    font-size: 19px;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+.equipo {
+    width: 65px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+.icono-uno {
+    width: 85px;
+    height: auto;
+}
+
+.bounce {
+    animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .perfil-icon {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .text-container {
+        margin: 10px 0;
+    }
+
+    .equipo {
+        width: 50px;
+    }
+
+    .icono-uno {
+        width: 60px;
+    }
+
+    .text-container h1 {
+        font-size: 20px;
+    }
+
+    .text-container p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 430px) {
+    .text-container h1 {
+        font-size: 22px;
+    }
+
+    .text-container p {
+        font-size: 14px;
+    }
+
+    .equipo {
+        width: 40px;
+    }
+
+    .icono-uno {
+        width: 55px;
+    }
+}
+
+
+/*TARJETAS*/
+
+.container_cards {
+    padding: 50px 0;
+    background-color: #eeeeee;
+}
+.wrapper {
+    padding: 0px 3%;
+}
+
+.wrapper p {
+    text-align: center;
+    font-size: 19px;
+}
+
+.wrapper h2 {
+    text-align: center;
+}
+
+.card_area {
+    display: grid;
+    margin-top: 50px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center; /* Esto asegura que las tarjetas se centren en el contenedor */
+    
+}
+
+.card_cards {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.829);
+    overflow: hidden;
+
+}
+
+.card_cards img{
+    height: 350px;
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: linear-gradient(transparent, #1c1c1cd3 60%);
+    padding: 10px;
+    text-align: center;
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.overlay h3{
+    margin: 5px 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.overlay p {
+    width: 100%;
+    margin: 5px 0;
+    word-wrap: break-word;
+    color: #fff;
+
+}
+
+.overlay a{
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    color: #054ea1;
+    background: #fff;
+    border-radius: 50px;
+    text-align: center;
+    padding: 5px 15px;
+}
+
+.overlay .img-icon {
+    max-width: 95px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.card_cards:hover img{
+    transform: scale(1.1);
+}
+
+.card_cards:hover .overlay{
+    opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .card_area {
+        grid-template-columns: repeat(4, 1fr); /* 4 tarjetas en una fila */
+    }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+    .card_area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 599px) {
+    .card_area {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 430px) {
+    .card_area {
+        grid-template-columns: 1fr;
+    }
 }

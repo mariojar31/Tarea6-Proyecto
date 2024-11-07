@@ -3,4 +3,47 @@
     padding: 0;
 }
 
-/*FORMULARIO LOGIN REGISTRO*/ 
+#carouselExample {
+  border-radius: 15px; /* Ajusta este valor según el radio que quieras */
+  overflow: hidden; /* Esto es importante para que el contenido no sobresalga del borde redondeado */
+}
+
+.card-small {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 15px;
+    box-sizing: border-box;
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.carousel-item .col-md-4,
+.carousel-item .col-sm-6 {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 10;
+}
+
+.carousel-inner .carousel-item {
+    background-color: #dee0e0;
+    padding: 20px;
+}
